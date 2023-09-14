@@ -58,7 +58,7 @@ export class Tempo {
         ),
       });
 
-      if (existsSync('tempo.json')) {
+      if (process.env.NODE_ENV === 'development' && existsSync('tempo.json')) {
         const file = await readFile('tempo.json', 'utf-8');
         return JSON.parse(file) as Promise<z.infer<typeof schema>['results']>;
       }
@@ -89,7 +89,9 @@ export class Tempo {
         results.push(...parsedResult.results);
       }
 
-      await writeFile('tempo.json', JSON.stringify(results, null, 2));
+      if (process.env.NODE_ENV === 'development') {
+        await writeFile('tempo.json', JSON.stringify(results, null, 2));
+      }
 
       return results;
     },
