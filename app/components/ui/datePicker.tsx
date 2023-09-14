@@ -17,10 +17,9 @@ export function DatePickerWithRange({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) {
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [date, setDate] = React.useState<DateRange | undefined>({
-    from: new Date(searchParams.get('start') ?? ''),
-    to: new Date(searchParams.get('end') ?? ''),
+    from: new Date(searchParams.get('start') ?? new Date()),
+    to: new Date(searchParams.get('end') ?? addDays(new Date(), 7)),
   });
 
   return (
