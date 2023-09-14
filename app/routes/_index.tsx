@@ -15,10 +15,7 @@ import { DatePickerWithRange } from '~/components/ui/datePicker';
 import { Jira } from '~/lib/jira';
 
 export const meta: V2_MetaFunction = () => {
-  return [
-    { title: 'New Remix App' },
-    { name: 'description', content: 'Welcome to Remix!' },
-  ];
+  return [{ title: 'Janus' }];
 };
 
 export async function loader({ request }: LoaderArgs) {
