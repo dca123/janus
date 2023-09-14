@@ -20,10 +20,8 @@ export const meta: V2_MetaFunction = () => {
 
 export async function loader({ request }: LoaderArgs) {
   const url = new URL(request.url);
-  const start =
-    url.searchParams.get('start') ?? new Date('2023-08-01').toDateString();
-  const end =
-    url.searchParams.get('end') ?? new Date('2023-09-01').toDateString();
+  const start = url.searchParams.get('start') ?? undefined;
+  const end = url.searchParams.get('end') ?? undefined;
   console.log({ start, end });
 
   const tempo = new Tempo(process.env.TEMPO_API ?? '');

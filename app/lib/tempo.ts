@@ -27,12 +27,7 @@ export class Tempo {
   }
 
   public readonly worklogs = {
-    list: async (
-      options: { from: string; to: string } = {
-        from: '2023-08-01',
-        to: '2023-09-07',
-      },
-    ) => {
+    list: async ({ from = '2023-08-01', to = '2023-09-07' }) => {
       const schema = z.object({
         self: z.string(),
         metadata: z.object({
@@ -71,8 +66,8 @@ export class Tempo {
       const results = [];
 
       const url = new TempoUrl('worklogs');
-      url.searchParams.append('from', options.from);
-      url.searchParams.append('to', options.to);
+      url.searchParams.append('from', from);
+      url.searchParams.append('to', to);
 
       const limit = 100;
       let offset = 0;
