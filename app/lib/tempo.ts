@@ -8,7 +8,7 @@ export class Tempo {
     this.apiKey = apiKey;
   }
 
-  get authorizationHeader(): string {
+  private get authorizationHeader(): string {
     return `Bearer ${this.apiKey}`;
   }
 
@@ -111,15 +111,14 @@ async function main() {
     worklogs,
     R.groupBy((item) => item.author.accountId),
     R.mapValues((items) => {
-      const sumOfTimeSpent = R.sumBy(items, (item) => item.timeSpentSeconds);
-      const sumOfBillableSeconds = R.sumBy(
-        items,
-        (item) => item.billableSeconds,
-      );
-      const percentage = (sumOfBillableSeconds / sumOfTimeSpent) * 100;
+      const sumOfTimeSpentInHours =
+        R.sumBy(items, (item) => item.timeSpentSeconds) / 3600;
+      const sumOfBillableHours =
+        R.sumBy(items, (item) => item.billableSeconds) / 3600;
+      const percentage = (sumOfBillableHours / sumOfTimeSpentInHours) * 100;
       return {
-        sumOfTimeSpent,
-        sumOfBillableSeconds,
+        sumOfTimeSpentInHours,
+        sumOfBillableHours,
         percentage,
       };
     }),
@@ -127,5 +126,3 @@ async function main() {
   console.log(sumOfTimeSpent);
   console.log(Object.keys(sumOfTimeSpent).length);
 }
-
-main();
