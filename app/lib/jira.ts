@@ -1,15 +1,12 @@
 import { z } from 'zod';
 
 export class Jira {
-  constructor(
-    private apiToken: string,
-    private email: string,
-  ) {
+  constructor(private apiToken: string, private email: string) {
     this.apiToken = apiToken;
     this.email = email;
   }
 
-  get authorizationHeader(): string {
+  private get authorizationHeader(): string {
     return `Basic ${Buffer.from(`${this.email}:${this.apiToken}`).toString(
       'base64',
     )}`;
@@ -58,9 +55,8 @@ export class Jira {
       url.searchParams.append('accountId', accountId);
 
       const response = await this.callApi(url, 'GET');
-      console.log(response);
-      //   const parsedResult = schema.parse(response);
-      return 'parsedResult';
+      const parsedResult = schema.parse(response);
+      return parsedResult;
     },
   };
 }
@@ -100,4 +96,4 @@ async function main() {
   }
 }
 
-main();
+// main();
