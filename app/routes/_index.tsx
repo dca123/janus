@@ -52,15 +52,17 @@ const DEFAULT_DATE_RANGE = {
 export async function loader({ request }: LoaderArgs) {
   const url = new URL(request.url);
   const start =
-    url.searchParams.get('start') ?? DEFAULT_DATE_RANGE.from.toDateString();
+    url.searchParams.get('start') ??
+    format(DEFAULT_DATE_RANGE.from, 'yyyy-MM-dd');
   const end =
-    url.searchParams.get('end') ?? DEFAULT_DATE_RANGE.to.toDateString();
+    url.searchParams.get('end') ?? format(DEFAULT_DATE_RANGE.to, 'yyyy-MM-dd');
 
   const tempo = new Tempo(process.env.TEMPO_API ?? '');
   const jira = new Jira(
     process.env.JIRA_API ?? '',
     process.env.JIRA_EMAIL ?? '',
   );
+
   const worklogs = await tempo.worklogs.list({
     from: start,
     to: end,
