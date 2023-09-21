@@ -23,7 +23,7 @@ import {
   PopoverContent,
 } from '~/components/ui/popover';
 import { addDays, format } from 'date-fns';
-import { CalendarIcon } from 'lucide-react';
+import { CalendarIcon, FilterIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import {
   Form,
@@ -44,11 +44,17 @@ export const meta: V2_MetaFunction = () => {
   return [{ title: 'Janus' }];
 };
 
+const DEFAULT_DATE_RANGE = {
+  from: new Date(),
+  to: addDays(new Date(), 7),
+};
+
 export async function loader({ request }: LoaderArgs) {
   const url = new URL(request.url);
-  const start = url.searchParams.get('start') ?? undefined;
-  const end = url.searchParams.get('end') ?? undefined;
-  console.log({ start, end });
+  const start =
+    url.searchParams.get('start') ?? DEFAULT_DATE_RANGE.from.toDateString();
+  const end =
+    url.searchParams.get('end') ?? DEFAULT_DATE_RANGE.to.toDateString();
 
   const tempo = new Tempo(process.env.TEMPO_API ?? '');
   const jira = new Jira(
@@ -59,14 +65,7 @@ export async function loader({ request }: LoaderArgs) {
     from: start,
     to: end,
   });
-  const worklogUserIds = await R.pipe(
-    worklogs,
-    R.uniqBy((item) => item.author.accountId),
-    async (items) =>
-      await Promise.all(
-        items.map((item) => jira.user.get(item.author.accountId)),
-      ),
-  );
+  const allUsers = await jira.user.getAll();
 
   const sumOfTimeSpent = R.pipe(
     worklogs,
@@ -79,11 +78,11 @@ export async function loader({ request }: LoaderArgs) {
       const percentage = Math.floor(
         (sumOfBillableHours / sumOfTimeSpentInHours) * 100,
       );
-      const user = worklogUserIds.find(
+      const user = allUsers.find(
         (user) => user.accountId === items[0].author.accountId,
       );
       if (user === undefined) {
-        throw new Error('User not found');
+        throw new Error(`User with ${items[0].author.accountId} not found'`);
       }
       return {
         displayName: user.displayName,
@@ -92,25 +91,46 @@ export async function loader({ request }: LoaderArgs) {
         percentage,
       };
     }),
+
     R.toPairs,
     R.sortBy(([, user]) => -user.percentage),
   );
-  console.log(sumOfTimeSpent.length);
-  return sumOfTimeSpent;
+
+  const usersWithoutWorklogs = R.pipe(
+    allUsers,
+    R.filter(
+      (user) => user.accountType === 'atlassian' && user.active === true,
+    ),
+    R.map(R.pick(['accountId', 'displayName'])),
+    R.filter(
+      (user) =>
+        R.find(sumOfTimeSpent, ([userId]) => userId === user.accountId) ===
+        undefined,
+    ),
+  );
+
+  return { sumOfTimeSpent, usersWithoutWorklogs };
 }
 
 export default function Index() {
-  const data = useLoaderData<typeof loader>();
+  const { sumOfTimeSpent: data, usersWithoutWorklogs } =
+    useLoaderData<typeof loader>();
   const navigation = useNavigation();
-  console.log({ navigation });
+
   return (
     <div className="space-y-4">
       <h1 className="text-3xl">Janus</h1>
       <Separator />
       <DatePickerForm />
-      {navigation.state === 'loading' ? <div>Loading...</div> : null}
+      {navigation.state === 'loading' ? (
+        <div>
+          <p className="text-muted-foreground">Crunching worklogs ... </p>
+        </div>
+      ) : null}
       <Table>
-        <TableCaption>Time spent by user</TableCaption>
+        <TableCaption>
+          <TableCaptionText />
+        </TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[200px]">Name</TableHead>
@@ -132,11 +152,32 @@ export default function Index() {
               <TableCell className="text-right">{user.percentage}%</TableCell>
             </TableRow>
           ))}
+          {usersWithoutWorklogs.map((user) => (
+            <TableRow key={user.accountId} className="text-muted-foreground">
+              <TableCell className="font-medium">{user.displayName}</TableCell>
+              <TableCell className="text-right">0</TableCell>
+              <TableCell className="text-right">0</TableCell>
+              <TableCell className="text-right">0%</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>
   );
 }
+
+const TableCaptionText = () => {
+  const [searchParams] = useSearchParams();
+  const from = new Date(searchParams.get('start') ?? DEFAULT_DATE_RANGE.from);
+  const to = new Date(searchParams.get('end') ?? DEFAULT_DATE_RANGE.to);
+  return (
+    <p>
+      Time spent by users from{' '}
+      <span className="text-primary">{format(from, 'LLL dd, y')}</span> to{' '}
+      <span className="text-primary">{format(to, 'LLL dd, y')}</span>
+    </p>
+  );
+};
 
 const FormSchema = z.object({
   range: z.object({
@@ -151,8 +192,8 @@ function DatePickerForm() {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       range: {
-        from: new Date(searchParams.get('start') ?? new Date()),
-        to: new Date(searchParams.get('end') ?? addDays(new Date(), 7)),
+        from: new Date(searchParams.get('start') ?? DEFAULT_DATE_RANGE.from),
+        to: new Date(searchParams.get('end') ?? DEFAULT_DATE_RANGE.to),
       },
     },
   });
@@ -223,6 +264,7 @@ function DatePickerForm() {
           )}
         />
         <Button type="submit" size="sm">
+          <FilterIcon className="h-4 w-4 mr-2" />
           Filter
         </Button>
       </form>

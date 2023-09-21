@@ -58,10 +58,38 @@ export class Jira {
       const parsedResult = schema.parse(response);
       return parsedResult;
     },
+    getAll: async () => {
+      const schema = z.array(
+        z.object({
+          self: z.string(),
+          accountId: z.string(),
+          accountType: z.union([
+            z.literal('atlassian'),
+            z.literal('app'),
+            z.literal('customer'),
+            z.literal('unknown'),
+          ]),
+          emailAddress: z.string().optional(),
+          avatarUrls: z.object({
+            '48x48': z.string(),
+            '24x24': z.string(),
+            '16x16': z.string(),
+            '32x32': z.string(),
+          }),
+          displayName: z.string(),
+          active: z.boolean(),
+        }),
+      );
+      const url = new JiraUrl('users');
+      url.searchParams.append('maxResults', '1000');
+      const response = await this.callApi(url, 'GET');
+      const parsedResult = schema.parse(response);
+      return parsedResult;
+    },
   };
 }
 
-type Resource = 'user';
+type Resource = 'user' | 'users';
 class JiraUrl extends URL {
   constructor(resource: Resource) {
     super(`https://parklaneit.atlassian.net/rest/api/3/${resource}`);
@@ -74,26 +102,7 @@ const jira = new Jira(
 );
 
 async function main() {
-  const users = [
-    '618c68ccfba4d0006adabf2d',
-    '5c189421ab1c1d35825bbfab',
-    '601b6398b7bda90068eb6b36',
-    '557058:b3bc7820-09ec-49e5-8fad-a0ef23978209',
-    '5f4738a0fdc3f5003ffd7cbc',
-    '607ca8339567330069754392',
-    '6271b8502db3080070245a6f',
-    '63d0a95dce7f4b4e14f9c0e7',
-    '622fb39150cceb0070792956',
-    '712020:4956e6a2-4d49-49e8-88bc-5f9c6b07c047',
-    '630eb8459796033b256bf239',
-    '62f4529696eb272011aa8ad4',
-    '5dfc107d3aab9f0cafa05469',
-  ];
-
-  for (const userId of users) {
-    const user = await jira.user.get(userId);
-    console.log(user.displayName);
-  }
+  await jira.user.getAll();
 }
 
 // main();
