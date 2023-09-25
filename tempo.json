@@ -2296,6 +2296,146 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22059",
+    "tempoWorklogId": 22059,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/16877",
+      "id": 16877
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-11",
+    "startTime": "08:00:00",
+    "description": "Review alerts",
+    "createdAt": "2023-09-25T01:55:49Z",
+    "updatedAt": "2023-09-25T01:56:22Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22059/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "UTAS-MSO"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22060",
+    "tempoWorklogId": 22060,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/16877",
+      "id": 16877
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-11",
+    "startTime": "08:00:00",
+    "description": "Review alerts",
+    "createdAt": "2023-09-25T01:55:53Z",
+    "updatedAt": "2023-09-25T01:55:53Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22060/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "MONASH-MSO"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22061",
+    "tempoWorklogId": 22061,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/16877",
+      "id": 16877
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-11",
+    "startTime": "08:00:00",
+    "description": "Review alerts",
+    "createdAt": "2023-09-25T01:56:04Z",
+    "updatedAt": "2023-09-25T01:56:04Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22061/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "STT-MSO"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22062",
+    "tempoWorklogId": 22062,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/16877",
+      "id": 16877
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-11",
+    "startTime": "08:00:00",
+    "description": "Review alerts",
+    "createdAt": "2023-09-25T01:56:13Z",
+    "updatedAt": "2023-09-25T01:56:13Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22062/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "SVHA-MSO"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22063",
+    "tempoWorklogId": 22063,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19417",
+      "id": 19417
+    },
+    "timeSpentSeconds": 2700,
+    "billableSeconds": 2700,
+    "startDate": "2023-09-11",
+    "startTime": "08:15:00",
+    "description": "ORganise testing of batch processes",
+    "createdAt": "2023-09-25T01:58:26Z",
+    "updatedAt": "2023-09-25T01:58:26Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22063/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-PROJEC"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21924",
     "tempoWorklogId": 21924,
     "issue": {
@@ -2315,6 +2455,62 @@
     },
     "attributes": {
       "self": "https://api.tempo.io/4/worklogs/21924/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22044",
+    "tempoWorklogId": 22044,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/13753",
+      "id": 13753
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-11",
+    "startTime": "09:45:00",
+    "description": "NZP/PL Daily Standup",
+    "createdAt": "2023-09-25T00:24:22Z",
+    "updatedAt": "2023-09-25T00:24:22Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22044/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-MSCS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22058",
+    "tempoWorklogId": 22058,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11854",
+      "id": 11854
+    },
+    "timeSpentSeconds": 7200,
+    "billableSeconds": 0,
+    "startDate": "2023-09-11",
+    "startTime": "10:00:00",
+    "description": "Timesheet",
+    "createdAt": "2023-09-25T01:55:06Z",
+    "updatedAt": "2023-09-25T01:55:06Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22058/work-attribute-values",
       "values": [
         {
           "key": "_Account_",
@@ -2492,6 +2688,34 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22045",
+    "tempoWorklogId": 22045,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 0,
+    "startDate": "2023-09-11",
+    "startTime": "12:00:00",
+    "description": "Park Lane Team Stand Up - - Trivia\n(https://trivia.remotesocial.io/game/xlXjgY6KSEp38oQBK2Ma/delighted-bumpy-cheetah\n[https://trivia.remotesocial.io/game/xlXjgY6KSEp38oQBK2Ma/delighted-bumpy-cheetah])\n- Anniversaries\n- Birthdays\n- Holidays/Days Off\n- Melb Office Days\n- Team meet ups\n- Shout Outs summary\n- Actions from Previous Weeks",
+    "createdAt": "2023-09-25T00:24:29Z",
+    "updatedAt": "2023-09-25T00:24:29Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22045/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21925",
     "tempoWorklogId": 21925,
     "issue": {
@@ -2520,6 +2744,62 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22046",
+    "tempoWorklogId": 22046,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/13753",
+      "id": 13753
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 1800,
+    "startDate": "2023-09-11",
+    "startTime": "12:30:00",
+    "description": "CMS Start of Week - Morning Team,\n\nThe purpose of this meeting is to run a detail level review of all open CMS work\nitems prior to the Customer facing meeting on Tuesday.\n\nAgenda:\n\n * Review all work in flight on CMS Project dashboard\n * Review all work in flight on CMS Service Desk dashboard\n * Clarify owners, key deliverables and milestones for the week\n * Call out any issues or blockers\n\n\n\nCheers,\nTim",
+    "createdAt": "2023-09-25T00:24:36Z",
+    "updatedAt": "2023-09-25T00:24:36Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22046/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-MSCS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22047",
+    "tempoWorklogId": 22047,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11853",
+      "id": 11853
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 0,
+    "startDate": "2023-09-11",
+    "startTime": "13:00:00",
+    "description": "Calvary Discussion",
+    "createdAt": "2023-09-25T00:24:48Z",
+    "updatedAt": "2023-09-25T00:24:48Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22047/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21957",
     "tempoWorklogId": 21957,
     "issue": {
@@ -2539,6 +2819,62 @@
     },
     "attributes": {
       "self": "https://api.tempo.io/4/worklogs/21957/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22048",
+    "tempoWorklogId": 22048,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19542",
+      "id": 19542
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 1800,
+    "startDate": "2023-09-11",
+    "startTime": "13:30:00",
+    "description": "Discuss 'the plan' for Reshaping the CMS databases - Kickoff mtg to discuss the plan to reshape the CMS Database\n\n* Look at potential timetable\n* Responsibly of NZ Post\n* Business impacts on UAT, PRd and Get Price\n* Impacts on DR cutover\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin on your computer, mobile app or room device\nClick here to join the meeting\nMeeting ID: 462 055 327 625\nPasscode: MxNpS8\nDownload Teams | Join on the web\nLearn More | Meeting options\n________________________________________________________________________________\n\nThis email with any attachments is confidential and may be subject to legal\nprivilege. If it is not intended for you please reply immediately, destroy it\nand do not copy, disclose or use it in any way.\n",
+    "createdAt": "2023-09-25T00:25:10Z",
+    "updatedAt": "2023-09-25T00:25:10Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22048/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-PROJEC"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22049",
+    "tempoWorklogId": 22049,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11853",
+      "id": 11853
+    },
+    "timeSpentSeconds": 7200,
+    "billableSeconds": 0,
+    "startDate": "2023-09-11",
+    "startTime": "14:30:00",
+    "description": "Costing Sheet - State Trustee Opp - https://docs.google.com/presentation/d/1jMNtwDYKUiwKiKEC4B6ANAMMjdYtwJBl/edit?usp=drive_link&ouid=109906314685762452535&rtpof=true&sd=true\n[https://docs.google.com/presentation/d/1jMNtwDYKUiwKiKEC4B6ANAMMjdYtwJBl/edit?usp=drive_link&ouid=109906314685762452535&rtpof=true&sd=true]",
+    "createdAt": "2023-09-25T00:25:26Z",
+    "updatedAt": "2023-09-25T00:25:26Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22049/work-attribute-values",
       "values": [
         {
           "key": "_Account_",
@@ -2660,6 +2996,34 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22057",
+    "tempoWorklogId": 22057,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18823",
+      "id": 18823
+    },
+    "timeSpentSeconds": 5400,
+    "billableSeconds": 5400,
+    "startDate": "2023-09-12",
+    "startTime": "08:00:00",
+    "description": "Review scan and investigate current patches, confirm new patches available and other vulnerabilities now resolved in vicdc2",
+    "createdAt": "2023-09-25T01:51:31Z",
+    "updatedAt": "2023-09-25T01:51:31Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22057/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "SVHA-MSO"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21960",
     "tempoWorklogId": 21960,
     "issue": {
@@ -2716,6 +3080,34 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22041",
+    "tempoWorklogId": 22041,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/13753",
+      "id": 13753
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-12",
+    "startTime": "09:45:00",
+    "description": "NZP/PL Daily Standup",
+    "createdAt": "2023-09-25T00:23:26Z",
+    "updatedAt": "2023-09-25T00:23:26Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22041/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-MSCS"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21961",
     "tempoWorklogId": 21961,
     "issue": {
@@ -2735,6 +3127,34 @@
     },
     "attributes": {
       "self": "https://api.tempo.io/4/worklogs/21961/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22042",
+    "tempoWorklogId": 22042,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 0,
+    "startDate": "2023-09-12",
+    "startTime": "10:00:00",
+    "description": "Delivery team standup - \nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829",
+    "createdAt": "2023-09-25T00:23:32Z",
+    "updatedAt": "2023-09-25T00:23:32Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22042/work-attribute-values",
       "values": [
         {
           "key": "_Account_",
@@ -2856,6 +3276,34 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22056",
+    "tempoWorklogId": 22056,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19550",
+      "id": 19550
+    },
+    "timeSpentSeconds": 19800,
+    "billableSeconds": 19800,
+    "startDate": "2023-09-12",
+    "startTime": "11:45:00",
+    "description": "Review issue with replication post AD server upgrade.   Test authentication and reboot servers, provide workaround to disable nts authentication and monitor resync progress",
+    "createdAt": "2023-09-25T01:50:27Z",
+    "updatedAt": "2023-09-25T01:50:27Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22056/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "GMW-ORDR"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21963",
     "tempoWorklogId": 21963,
     "issue": {
@@ -2879,6 +3327,34 @@
         {
           "key": "_Account_",
           "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22043",
+    "tempoWorklogId": 22043,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/17195",
+      "id": 17195
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 1800,
+    "startDate": "2023-09-12",
+    "startTime": "14:00:00",
+    "description": "SVHA - Project Updates - \nPhone: +61 2 9051 7818, PIN: 314041849\nPhone: +61 2 9051 7818, PIN: 314041849\nPhone: +61 2 9051 7818, PIN: 314041849",
+    "createdAt": "2023-09-25T00:24:12Z",
+    "updatedAt": "2023-09-25T00:24:12Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22043/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "SVHA-JU"
         }
       ]
     }
@@ -2940,6 +3416,62 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22035",
+    "tempoWorklogId": 22035,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/13753",
+      "id": 13753
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-13",
+    "startTime": "09:45:00",
+    "description": "NZP/PL Daily Standup",
+    "createdAt": "2023-09-25T00:18:17Z",
+    "updatedAt": "2023-09-25T00:18:17Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22035/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-MSCS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22036",
+    "tempoWorklogId": 22036,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 0,
+    "startDate": "2023-09-13",
+    "startTime": "10:00:00",
+    "description": "Delivery team standup - \nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829",
+    "createdAt": "2023-09-25T00:22:07Z",
+    "updatedAt": "2023-09-25T00:22:07Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22036/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/22010",
     "tempoWorklogId": 22010,
     "issue": {
@@ -2959,6 +3491,34 @@
     },
     "attributes": {
       "self": "https://api.tempo.io/4/worklogs/22010/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22037",
+    "tempoWorklogId": 22037,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11853",
+      "id": 11853
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 0,
+    "startDate": "2023-09-13",
+    "startTime": "10:30:00",
+    "description": "State Trustees Final Tune Up",
+    "createdAt": "2023-09-25T00:22:26Z",
+    "updatedAt": "2023-09-25T00:22:26Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22037/work-attribute-values",
       "values": [
         {
           "key": "_Account_",
@@ -3024,6 +3584,118 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22038",
+    "tempoWorklogId": 22038,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 3600,
+    "billableSeconds": 0,
+    "startDate": "2023-09-13",
+    "startTime": "13:00:00",
+    "description": "Sales Meeting - Pipeline Hygiene & General New Sales\n\n * Pipeline review:\n   - Close dates\n   - New opportunities\n   - Price variations\n   - General activity\n   - Requested support from internal team\n   - Red flags\n   \n   \n * Identify key actions for the coming week & review last weeks action items\n   \n   \n * Opportunity to request support or input from broader team where required -\n   Who do we know / How can we help / What do we need\n   \n   \n\nCustomer Engagement & Account Management\n\n * Existing customers\n   - Next steps by priority\n   - Hubspot top to bottom\n   - Pain points\n   - New opportunities/SOW's\n   - General activity\n   - Red flags\n   \n   \n * Co-selling with Key Vendors, what can we leverage this week?\n   - Case studies\n   - New offerings\n   - Levaragable opportunities\n   \n   \n * When was our last touchpoint with each client?\n   \n   ",
+    "createdAt": "2023-09-25T00:22:40Z",
+    "updatedAt": "2023-09-25T00:22:40Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22038/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22039",
+    "tempoWorklogId": 22039,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11853",
+      "id": 11853
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 0,
+    "startDate": "2023-09-13",
+    "startTime": "15:30:00",
+    "description": "State Trustees x Park Lane - Hey Gareth,\n\nLikewise, thanks for your time yesterday!\n\nLooking forward to catching up next week and running through some more detail\nfor your consideration.\n\n\nCheers,\nTim",
+    "createdAt": "2023-09-25T00:23:01Z",
+    "updatedAt": "2023-09-25T00:23:01Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22039/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22054",
+    "tempoWorklogId": 22054,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11853",
+      "id": 11853
+    },
+    "timeSpentSeconds": 8100,
+    "billableSeconds": 0,
+    "startDate": "2023-09-13",
+    "startTime": "16:00:00",
+    "description": "Quantification for state trustees and birthpac",
+    "createdAt": "2023-09-25T00:49:39Z",
+    "updatedAt": "2023-09-25T00:53:36Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22054/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22055",
+    "tempoWorklogId": 22055,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19410",
+      "id": 19410
+    },
+    "timeSpentSeconds": 12600,
+    "billableSeconds": 12600,
+    "startDate": "2023-09-13",
+    "startTime": "18:30:00",
+    "description": "Configure uat, organise refersh for testing batch",
+    "createdAt": "2023-09-25T00:53:25Z",
+    "updatedAt": "2023-09-25T00:53:49Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22055/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-PROJEC"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/22006",
     "tempoWorklogId": 22006,
     "issue": {
@@ -3047,6 +3719,34 @@
         {
           "key": "_Account_",
           "value": "SVHA-MSS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22053",
+    "tempoWorklogId": 22053,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19421",
+      "id": 19421
+    },
+    "timeSpentSeconds": 5400,
+    "billableSeconds": 5400,
+    "startDate": "2023-09-14",
+    "startTime": "08:00:00",
+    "description": "Testing of batch process on exisitng system",
+    "createdAt": "2023-09-25T00:45:23Z",
+    "updatedAt": "2023-09-25T00:45:23Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22053/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-PROJEC"
         }
       ]
     }
@@ -3248,6 +3948,62 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22040",
+    "tempoWorklogId": 22040,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 0,
+    "startDate": "2023-09-14",
+    "startTime": "14:00:00",
+    "description": "Clancy / Melissa check in",
+    "createdAt": "2023-09-25T00:23:18Z",
+    "updatedAt": "2023-09-25T00:23:18Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22040/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22052",
+    "tempoWorklogId": 22052,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11853",
+      "id": 11853
+    },
+    "timeSpentSeconds": 18000,
+    "billableSeconds": 0,
+    "startDate": "2023-09-14",
+    "startTime": "14:30:00",
+    "description": "Estimate for state trustees",
+    "createdAt": "2023-09-25T00:44:20Z",
+    "updatedAt": "2023-09-25T00:44:20Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22052/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21982",
     "tempoWorklogId": 21982,
     "issue": {
@@ -3360,6 +4116,34 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22050",
+    "tempoWorklogId": 22050,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11853",
+      "id": 11853
+    },
+    "timeSpentSeconds": 2700,
+    "billableSeconds": 0,
+    "startDate": "2023-09-15",
+    "startTime": "08:00:00",
+    "description": "State trustees proposal",
+    "createdAt": "2023-09-25T00:42:32Z",
+    "updatedAt": "2023-09-25T00:42:32Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22050/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/21894",
     "tempoWorklogId": 21894,
     "issue": {
@@ -3411,6 +4195,34 @@
         {
           "key": "_Account_",
           "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22051",
+    "tempoWorklogId": 22051,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19411",
+      "id": 19411
+    },
+    "timeSpentSeconds": 24300,
+    "billableSeconds": 24300,
+    "startDate": "2023-09-15",
+    "startTime": "10:15:00",
+    "description": "IMport uat database, complete configuration, test run batch on old system",
+    "createdAt": "2023-09-25T00:43:30Z",
+    "updatedAt": "2023-09-25T00:43:30Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22051/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-PROJEC"
         }
       ]
     }
@@ -3607,6 +4419,34 @@
         {
           "key": "_Account_",
           "value": "SVHA-MSS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22032",
+    "tempoWorklogId": 22032,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11850",
+      "id": 11850
+    },
+    "timeSpentSeconds": 28800,
+    "billableSeconds": 0,
+    "startDate": "2023-09-18",
+    "startTime": "08:00:00",
+    "description": "Tommy surgery",
+    "createdAt": "2023-09-25T00:17:11Z",
+    "updatedAt": "2023-09-25T00:17:11Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22032/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
         }
       ]
     }
@@ -3831,6 +4671,34 @@
         {
           "key": "_Account_",
           "value": "UTAS-MSS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22033",
+    "tempoWorklogId": 22033,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11850",
+      "id": 11850
+    },
+    "timeSpentSeconds": 28800,
+    "billableSeconds": 0,
+    "startDate": "2023-09-19",
+    "startTime": "08:00:00",
+    "description": "Tommy surgery",
+    "createdAt": "2023-09-25T00:17:13Z",
+    "updatedAt": "2023-09-25T00:17:15Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22033/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
         }
       ]
     }
@@ -4083,6 +4951,34 @@
         {
           "key": "_Account_",
           "value": "SVHA-MSS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22034",
+    "tempoWorklogId": 22034,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/16430",
+      "id": 16430
+    },
+    "timeSpentSeconds": 28800,
+    "billableSeconds": 28800,
+    "startDate": "2023-09-20",
+    "startTime": "22:00:00",
+    "description": "Oracle Patching - WebPAS - \n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin on your computer, mobile app or room device\nClick here to join the meeting\nMeeting ID: 411 304 084 853\nPasscode: wdmopY\nDownload Teams | Join on the web\nJoin with a video conferencing device\nsvha@m.webex.com\nVideo Conference ID: 133 306 953 6\nAlternate VTC instructions\nLearn More | Meeting options\n________________________________________________________________________________\n\nThis email and any attachments to it (the \"Email\") is confidential and is for\nthe use only of the intended recipient, and may not be duplicated or used by any\nother party without the express consent of the sender. If you are not the\nintended recipient of the Email, please notify the sender immediately by return\nemail, delete the Email, and do not copy, print, retransmit, store or act in\nreliance on the Email. St Vincent's Health Australia (\"SVHA\") does not guarantee\nthat the Email is free from errors, viruses or interference. Emails to and from\nSVHA or its related entities may be scanned and filtered in locations outside\nAustralia\n",
+    "createdAt": "2023-09-25T00:17:42Z",
+    "updatedAt": "2023-09-25T00:17:42Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22034/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "SVHA-MSO"
         }
       ]
     }

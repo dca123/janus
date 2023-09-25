@@ -11,6 +11,7 @@ import {
 import { Tempo } from '~/lib/tempo';
 import * as R from 'remeda';
 import {
+  Link,
   useLoaderData,
   useNavigation,
   useSearchParams,
@@ -45,7 +46,7 @@ export const meta: V2_MetaFunction = () => {
   return [{ title: 'Janus' }];
 };
 
-const DEFAULT_DATE_RANGE = {
+export const DEFAULT_DATE_RANGE = {
   from: startOfMonth(new Date()),
   to: new Date(),
 };
@@ -88,10 +89,10 @@ export async function loader({ request }: LoaderArgs) {
         throw new Error(`User with ${items[0].author.accountId} not found'`);
       }
       return {
-        displayName: user.displayName,
         sumOfTimeSpentInHours,
         sumOfBillableHours,
         percentage,
+        ...user,
       };
     }),
 
@@ -178,7 +179,9 @@ export default function Index() {
         <TableBody>
           {data.map(([userId, user]) => (
             <TableRow key={userId}>
-              <TableCell className="font-medium">{user.displayName}</TableCell>
+              <TableCell className="font-medium">
+                <Link to={`users/${user.accountId}`}>{user.displayName}</Link>
+              </TableCell>
               <TableCell className="text-right">
                 {user.sumOfTimeSpentInHours}
               </TableCell>

@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { writeFile, readFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import * as R from 'remeda';
+import { format, startOfMonth } from 'date-fns';
 
 export class Tempo {
   constructor(private apiKey: string) {
@@ -58,10 +59,10 @@ export class Tempo {
         ),
       });
 
-      if (process.env.NODE_ENV === 'development' && existsSync('tempo.json')) {
-        const file = await readFile('tempo.json', 'utf-8');
-        return JSON.parse(file) as Promise<z.infer<typeof schema>['results']>;
-      }
+      // if (process.env.NODE_ENV === 'development' && existsSync('tempo.json')) {
+      //   const file = await readFile('tempo.json', 'utf-8');
+      //   return JSON.parse(file) as Promise<z.infer<typeof schema>['results']>;
+      // }
 
       const results = [];
 
@@ -95,6 +96,66 @@ export class Tempo {
 
       return results;
     },
+    listByUser: async (
+      accountId: string,
+      options: { from: string; to: string },
+    ) => {
+      const schema = z.object({
+        self: z.string(),
+        metadata: z.object({
+          count: z.number(),
+          offset: z.number(),
+          limit: z.number(),
+          next: z.string().optional(),
+        }),
+        results: z.array(
+          z.object({
+            self: z.string(),
+            tempoWorklogId: z.number(),
+            issue: z.object({ self: z.string(), id: z.number() }),
+            timeSpentSeconds: z.number(),
+            billableSeconds: z.number(),
+            startDate: z.string(),
+            startTime: z.string(),
+            description: z.string(),
+            createdAt: z.string(),
+            updatedAt: z.string(),
+            author: z.object({ self: z.string(), accountId: z.string() }),
+            attributes: z.object({
+              self: z.string(),
+              values: z.array(z.object({ key: z.string(), value: z.string() })),
+            }),
+          }),
+        ),
+      });
+
+      const url = new TempoUrl('worklogs');
+      url.pathname += `/user/${accountId}`;
+      url.searchParams.append('from', options.from);
+      url.searchParams.append('to', options.to);
+
+      const results = [];
+      const limit = 100;
+      let offset = 0;
+
+      url.searchParams.append('limit', limit.toString());
+      url.searchParams.append('offset', offset.toString());
+
+      const response = await this.callApi(url, 'GET');
+      let parsedResult = schema.parse(response);
+      results.push(...parsedResult.results);
+
+      while (parsedResult.metadata.next !== undefined) {
+        offset += limit;
+        console.log(offset);
+        url.searchParams.set('offset', offset.toString());
+        const response = await this.callApi(url, 'GET');
+        parsedResult = schema.parse(response);
+        results.push(...parsedResult.results);
+      }
+
+      return results;
+    },
   };
 }
 
@@ -108,23 +169,9 @@ class TempoUrl extends URL {
 const tempo = new Tempo(process.env.TEMPO_API as string);
 
 async function main() {
-  const worklogs = await tempo.worklogs.list();
-  const sumOfTimeSpent = R.pipe(
-    worklogs,
-    R.groupBy((item) => item.author.accountId),
-    R.mapValues((items) => {
-      const sumOfTimeSpentInHours =
-        R.sumBy(items, (item) => item.timeSpentSeconds) / 3600;
-      const sumOfBillableHours =
-        R.sumBy(items, (item) => item.billableSeconds) / 3600;
-      const percentage = (sumOfBillableHours / sumOfTimeSpentInHours) * 100;
-      return {
-        sumOfTimeSpentInHours,
-        sumOfBillableHours,
-        percentage,
-      };
-    }),
-  );
-  console.log(sumOfTimeSpent);
-  console.log(Object.keys(sumOfTimeSpent).length);
+  const listByUser = tempo.worklogs.listByUser('6271b8502db3080070245a6f', {
+    from: '2023-08-01',
+    to: '2023-09-25',
+  });
 }
+// main();
