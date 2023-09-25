@@ -39,6 +39,13 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '~/components/ui/button';
 import { Calendar } from '~/components/ui/calendar';
 import { Separator } from '~/components/ui/separator';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/card';
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: 'Janus' }];
@@ -110,25 +117,58 @@ export async function loader({ request }: LoaderArgs) {
         undefined,
     ),
   );
+  const averageUtilization = calculateAverageUtilization(worklogs);
 
-  return { sumOfTimeSpent, usersWithoutWorklogs };
+  return { sumOfTimeSpent, usersWithoutWorklogs, averageUtilization };
 }
 
+const calculateAverageUtilization = (
+  worklogs: Array<{
+    timeSpentSeconds: number;
+    billableSeconds: number;
+  }>,
+) => {
+  const totalBillableSeconds = R.sumBy(
+    worklogs,
+    (item) => item.billableSeconds,
+  );
+  const totalTimeSpentSeconds = R.sumBy(
+    worklogs,
+    (item) => item.timeSpentSeconds,
+  );
+  return Math.floor((totalBillableSeconds / totalTimeSpentSeconds) * 100);
+};
+
 export default function Index() {
-  const { sumOfTimeSpent: data, usersWithoutWorklogs } =
-    useLoaderData<typeof loader>();
+  const {
+    sumOfTimeSpent: data,
+    usersWithoutWorklogs,
+    averageUtilization,
+  } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
 
   return (
     <div className="space-y-4">
-      <h1 className="text-3xl">Janus</h1>
-      <Separator />
+      <h1 className="text-xl text-center">Janus</h1>
       <DatePickerForm />
+      <Separator />
       {navigation.state === 'loading' ? (
         <div>
           <p className="text-muted-foreground">Crunching worklogs ... </p>
         </div>
       ) : null}
+      <div>
+        <Card className="w-1/5">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium">
+              Average Utilization
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-2xl font-bold">{averageUtilization}%</p>
+          </CardContent>
+        </Card>
+      </div>
       <Table>
         <TableCaption>
           <TableCaptionText />
@@ -136,9 +176,9 @@ export default function Index() {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[200px]">Name</TableHead>
-            <TableHead className="text-right">Time Spent in Hours</TableHead>
+            <TableHead className="text-right">Logged Hours</TableHead>
             <TableHead className="text-right">Billable Hours</TableHead>
-            <TableHead className="text-right">Percentage</TableHead>
+            <TableHead className="text-right">Utilization</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -174,7 +214,7 @@ const TableCaptionText = () => {
   const to = new Date(searchParams.get('end') ?? DEFAULT_DATE_RANGE.to);
   return (
     <p>
-      Time spent by users from{' '}
+      Hours logged by users from{' '}
       <span className="text-primary">{format(from, 'LLL dd, y')}</span> to{' '}
       <span className="text-primary">{format(to, 'LLL dd, y')}</span>
     </p>

@@ -96,13 +96,13 @@ class JiraUrl extends URL {
   }
 }
 
-const jira = new Jira(
-  process.env.JIRA_API as string,
-  process.env.JIRA_EMAIL as string,
-);
+// const jira = new Jira(
+//   process.env.JIRA_API as string,
+//   process.env.JIRA_EMAIL as string,
+// );
 
-async function main() {
-  await jira.user.getAll();
-}
+// async function main() {
+//   await jira.user.getAll();
+// }
 
 // main();
