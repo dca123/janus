@@ -22,7 +22,7 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from '~/components/ui/popover';
-import { addDays, format } from 'date-fns';
+import { addDays, format, startOfMonth } from 'date-fns';
 import { CalendarIcon, FilterIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import {
@@ -39,21 +39,15 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '~/components/ui/button';
 import { Calendar } from '~/components/ui/calendar';
 import { Separator } from '~/components/ui/separator';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '~/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: 'Janus' }];
 };
 
 const DEFAULT_DATE_RANGE = {
-  from: new Date(),
-  to: addDays(new Date(), 7),
+  from: startOfMonth(new Date()),
+  to: new Date(),
 };
 
 export async function loader({ request }: LoaderArgs) {
