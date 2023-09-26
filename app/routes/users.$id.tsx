@@ -41,7 +41,7 @@ export default function Index() {
         <Avatar>
           <AvatarImage src={user.avatarUrls['48x48']} />
         </Avatar>
-        <h1>{user.displayName}</h1>
+        <h1 className="text-lg">{user.displayName}</h1>
       </div>
       <Separator />
     </div>

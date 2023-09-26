@@ -4984,6 +4984,62 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/22064",
+    "tempoWorklogId": 22064,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/13753",
+      "id": 13753
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-21",
+    "startTime": "09:45:00",
+    "description": "NZP/PL Daily Standup",
+    "createdAt": "2023-09-25T23:37:12Z",
+    "updatedAt": "2023-09-25T23:37:12Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22064/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-MSCS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22066",
+    "tempoWorklogId": 22066,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 0,
+    "startDate": "2023-09-21",
+    "startTime": "10:00:00",
+    "description": "Delivery team standup - \nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829",
+    "createdAt": "2023-09-25T23:37:32Z",
+    "updatedAt": "2023-09-25T23:37:32Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22066/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/22031",
     "tempoWorklogId": 22031,
     "issue": {
@@ -5003,6 +5059,286 @@
     },
     "attributes": {
       "self": "https://api.tempo.io/4/worklogs/22031/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22067",
+    "tempoWorklogId": 22067,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19321",
+      "id": 19321
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 1800,
+    "startDate": "2023-09-21",
+    "startTime": "11:30:00",
+    "description": "PAM Discussion - Good morning\nThanks for attending the recent PAM briefing and completing the workbook,\nThe next step is to gather more detailed information about what it is you access\nand how you access it, and this meeting is for that purpose.\nPlease feel free to invite anyone else who is appropriate from your\norganisation.\n\n\n\n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin on your computer, mobile app or room device\nClick here to join the meeting\nMeeting ID: 437 127 956 255\nPasscode: mJZnLj\nDownload Teams | Join on the web\nJoin with a video conferencing device\nsvha@m.webex.com\nVideo Conference ID: 135 637 530 5\nAlternative VTC instructions\nLearn more | Meeting options\n________________________________________________________________________________\nThis email and any attachments to it (the \"Email\") is confidential and is for\nthe use only of the intended recipient, and may not be duplicated or used by any\nother party without the express consent of the sender. If you are not the\nintended recipient of the Email, please notify the sender immediately by return\nemail, delete the Email, and do not copy, print, retransmit, store or act in\nreliance on the Email. St Vincent's Health Australia (\"SVHA\") does not guarantee\nthat the Email is free from errors, viruses or interference. Emails to and from\nSVHA or its related entities may be scanned and filtered in locations outside\nAustralia\n",
+    "createdAt": "2023-09-25T23:38:02Z",
+    "updatedAt": "2023-09-25T23:38:02Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22067/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "SVHA-TM-SO"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22068",
+    "tempoWorklogId": 22068,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/13753",
+      "id": 13753
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 1800,
+    "startDate": "2023-09-21",
+    "startTime": "13:00:00",
+    "description": "CMS Weekly Meeting - \n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin on your computer, mobile app or room device\nClick here to join the meeting\nMeeting ID: 435 604 976 136\nPasscode: sS9a6J\nDownload Teams | Join on the web\nLearn More | Meeting options\n________________________________________________________________________________\n\nThis email with any attachments is confidential and may be subject to legal\nprivilege. If it is not intended for you please reply immediately, destroy it\nand do not copy, disclose or use it in any way.\n",
+    "createdAt": "2023-09-25T23:38:09Z",
+    "updatedAt": "2023-09-25T23:38:09Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22068/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-MSCS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22069",
+    "tempoWorklogId": 22069,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/17195",
+      "id": 17195
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 1800,
+    "startDate": "2023-09-21",
+    "startTime": "14:00:00",
+    "description": "SVHA - Project Updates - \nPhone: +61 2 9051 7818, PIN: 314041849\nPhone: +61 2 9051 7818, PIN: 314041849\nPhone: +61 2 9051 7818, PIN: 314041849",
+    "createdAt": "2023-09-25T23:38:42Z",
+    "updatedAt": "2023-09-25T23:38:42Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22069/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "SVHA-JU"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22071",
+    "tempoWorklogId": 22071,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19413",
+      "id": 19413
+    },
+    "timeSpentSeconds": 21600,
+    "billableSeconds": 21600,
+    "startDate": "2023-09-21",
+    "startTime": "14:30:00",
+    "description": "Cutover uat",
+    "createdAt": "2023-09-25T23:43:50Z",
+    "updatedAt": "2023-09-25T23:43:50Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22071/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-PROJEC"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22065",
+    "tempoWorklogId": 22065,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/13753",
+      "id": 13753
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 900,
+    "startDate": "2023-09-22",
+    "startTime": "09:45:00",
+    "description": "NZP/PL Daily Standup",
+    "createdAt": "2023-09-25T23:37:19Z",
+    "updatedAt": "2023-09-25T23:37:19Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22065/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-MSCS"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22070",
+    "tempoWorklogId": 22070,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19559",
+      "id": 19559
+    },
+    "timeSpentSeconds": 7200,
+    "billableSeconds": 7200,
+    "startDate": "2023-09-22",
+    "startTime": "10:00:00",
+    "description": "Investigate view performance",
+    "createdAt": "2023-09-25T23:43:13Z",
+    "updatedAt": "2023-09-25T23:43:13Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22070/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "UTAS-MSO"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22072",
+    "tempoWorklogId": 22072,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/19417",
+      "id": 19417
+    },
+    "timeSpentSeconds": 20700,
+    "billableSeconds": 20700,
+    "startDate": "2023-09-22",
+    "startTime": "12:00:00",
+    "description": "post cutover support, test batch in uat",
+    "createdAt": "2023-09-25T23:44:21Z",
+    "updatedAt": "2023-09-25T23:44:21Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=557058:b3bc7820-09ec-49e5-8fad-a0ef23978209",
+      "accountId": "557058:b3bc7820-09ec-49e5-8fad-a0ef23978209"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22072/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "NZP-PROJEC"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22073",
+    "tempoWorklogId": 22073,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18932",
+      "id": 18932
+    },
+    "timeSpentSeconds": 3600,
+    "billableSeconds": 0,
+    "startDate": "2023-09-26",
+    "startTime": "08:00:00",
+    "description": "CCTAE - content / assets",
+    "createdAt": "2023-09-26T06:44:28Z",
+    "updatedAt": "2023-09-26T06:44:28Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22073/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22074",
+    "tempoWorklogId": 22074,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 3600,
+    "billableSeconds": 0,
+    "startDate": "2023-09-26",
+    "startTime": "09:00:00",
+    "description": "Jo and Lis catch up - Weekly WIP - can be rescheduled as required!",
+    "createdAt": "2023-09-26T06:44:37Z",
+    "updatedAt": "2023-09-26T06:44:37Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22074/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/22075",
+    "tempoWorklogId": 22075,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18932",
+      "id": 18932
+    },
+    "timeSpentSeconds": 18000,
+    "billableSeconds": 0,
+    "startDate": "2023-09-26",
+    "startTime": "10:00:00",
+    "description": "CCTAE - reg page, data import, eDMs x2",
+    "createdAt": "2023-09-26T06:44:48Z",
+    "updatedAt": "2023-09-26T06:44:48Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/22075/work-attribute-values",
       "values": [
         {
           "key": "_Account_",

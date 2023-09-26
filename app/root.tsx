@@ -13,6 +13,11 @@ import styles from './tailwind.css';
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  {
+    rel: 'icon',
+    href: '/favicon.svg',
+    type: 'image/svg',
+  },
 ];
 
 export default function App() {
