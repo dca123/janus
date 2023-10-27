@@ -1,5 +1,5 @@
 import { Client } from '@hubspot/api-client';
-import { addMonths, getTime } from 'date-fns';
+import { addMonths, getTime, startOfMonth } from 'date-fns';
 import { z } from 'zod';
 
 export const DEAL_STAGES = {
@@ -71,7 +71,7 @@ export class HubSpot {
             ];
           const amount = parseFloat(data.properties.amount ?? '0');
           const adjustedAmount = Number(data.properties.amount) * probability;
-          const closeDate = new Date(data.properties.closedate);
+          const closeDate = startOfMonth(new Date(data.properties.closedate));
           const forecast = {
             month1: {
               date: addMonths(closeDate, 1),
