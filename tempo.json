@@ -6888,6 +6888,90 @@
     }
   },
   {
+    "self": "https://api.tempo.io/4/worklogs/23332",
+    "tempoWorklogId": 23332,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18932",
+      "id": 18932
+    },
+    "timeSpentSeconds": 12600,
+    "billableSeconds": 0,
+    "startDate": "2023-10-24",
+    "startTime": "09:00:00",
+    "description": "CCTAE - website, eDMs, exhibitor forms",
+    "createdAt": "2023-10-27T02:42:09Z",
+    "updatedAt": "2023-10-27T02:42:09Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23332/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23333",
+    "tempoWorklogId": 23333,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18931",
+      "id": 18931
+    },
+    "timeSpentSeconds": 7200,
+    "billableSeconds": 0,
+    "startDate": "2023-10-24",
+    "startTime": "13:30:00",
+    "description": "Park Lane eDM + website",
+    "createdAt": "2023-10-27T02:42:21Z",
+    "updatedAt": "2023-10-27T02:42:21Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23333/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23334",
+    "tempoWorklogId": 23334,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18932",
+      "id": 18932
+    },
+    "timeSpentSeconds": 3600,
+    "billableSeconds": 0,
+    "startDate": "2023-10-24",
+    "startTime": "15:30:00",
+    "description": "CCTAE",
+    "createdAt": "2023-10-27T02:42:29Z",
+    "updatedAt": "2023-10-27T02:42:29Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23334/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
     "self": "https://api.tempo.io/4/worklogs/23322",
     "tempoWorklogId": 23322,
     "issue": {
@@ -7000,8 +7084,8 @@
     }
   },
   {
-    "self": "https://api.tempo.io/4/worklogs/23326",
-    "tempoWorklogId": 23326,
+    "self": "https://api.tempo.io/4/worklogs/23330",
+    "tempoWorklogId": 23330,
     "issue": {
       "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11852",
       "id": 11852
@@ -7011,14 +7095,238 @@
     "startDate": "2023-10-26",
     "startTime": "05:45:00",
     "description": "NZP/PL Daily Standup",
+    "createdAt": "2023-10-27T01:33:16Z",
+    "updatedAt": "2023-10-27T01:33:16Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=607ca8339567330069754392",
+      "accountId": "607ca8339567330069754392"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23330/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23327",
+    "tempoWorklogId": 23327,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11852",
+      "id": 11852
+    },
+    "timeSpentSeconds": 1800,
+    "billableSeconds": 0,
+    "startDate": "2023-10-26",
+    "startTime": "07:30:00",
+    "description": "CMS Weekly Meeting - \n________________________________________________________________________________\nMicrosoft Teams meeting\nJoin on your computer, mobile app or room device\nClick here to join the meeting\nMeeting ID: 435 604 976 136\nPasscode: sS9a6J\nDownload Teams | Join on the web\nLearn More | Meeting options\n________________________________________________________________________________\n\nThis email with any attachments is confidential and may be subject to legal\nprivilege. If it is not intended for you please reply immediately, destroy it\nand do not copy, disclose or use it in any way.\n",
+    "createdAt": "2023-10-26T15:17:18Z",
+    "updatedAt": "2023-10-26T15:17:18Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=607ca8339567330069754392",
+      "accountId": "607ca8339567330069754392"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23327/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23328",
+    "tempoWorklogId": 23328,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11855",
+      "id": 11855
+    },
+    "timeSpentSeconds": 25200,
+    "billableSeconds": 0,
+    "startDate": "2023-10-26",
+    "startTime": "08:00:00",
+    "description": "Credit Notes pre-fill form of credit request (new/amend)",
+    "createdAt": "2023-10-27T01:32:55Z",
+    "updatedAt": "2023-10-27T01:32:55Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=607ca8339567330069754392",
+      "accountId": "607ca8339567330069754392"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23328/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23335",
+    "tempoWorklogId": 23335,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 3600,
+    "billableSeconds": 0,
+    "startDate": "2023-10-26",
+    "startTime": "08:00:00",
+    "description": "Park Lane - catch up",
+    "createdAt": "2023-10-27T02:42:45Z",
+    "updatedAt": "2023-10-27T02:42:45Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23335/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23336",
+    "tempoWorklogId": 23336,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18932",
+      "id": 18932
+    },
+    "timeSpentSeconds": 7200,
+    "billableSeconds": 0,
+    "startDate": "2023-10-26",
+    "startTime": "09:00:00",
+    "description": "CCTAE",
+    "createdAt": "2023-10-27T02:43:01Z",
+    "updatedAt": "2023-10-27T02:43:01Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23336/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23329",
+    "tempoWorklogId": 23329,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11851",
+      "id": 11851
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 0,
+    "startDate": "2023-10-27",
+    "startTime": "04:00:00",
+    "description": "Delivery team standup - \nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829\nPhone: +61 3 8594 9550, PIN: 772503829",
+    "createdAt": "2023-10-27T01:33:13Z",
+    "updatedAt": "2023-10-27T01:33:15Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=607ca8339567330069754392",
+      "accountId": "607ca8339567330069754392"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23329/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23326",
+    "tempoWorklogId": 23326,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11852",
+      "id": 11852
+    },
+    "timeSpentSeconds": 900,
+    "billableSeconds": 0,
+    "startDate": "2023-10-27",
+    "startTime": "05:45:00",
+    "description": "NZP/PL Daily Standup",
     "createdAt": "2023-10-26T03:28:45Z",
-    "updatedAt": "2023-10-26T03:28:45Z",
+    "updatedAt": "2023-10-27T01:33:19Z",
     "author": {
       "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=607ca8339567330069754392",
       "accountId": "607ca8339567330069754392"
     },
     "attributes": {
       "self": "https://api.tempo.io/4/worklogs/23326/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23331",
+    "tempoWorklogId": 23331,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/11855",
+      "id": 11855
+    },
+    "timeSpentSeconds": 25200,
+    "billableSeconds": 0,
+    "startDate": "2023-10-27",
+    "startTime": "08:00:00",
+    "description": "Credit Notes pre-fill form of credit request (new/amend)",
+    "createdAt": "2023-10-27T01:33:26Z",
+    "updatedAt": "2023-10-27T01:33:29Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=607ca8339567330069754392",
+      "accountId": "607ca8339567330069754392"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23331/work-attribute-values",
+      "values": [
+        {
+          "key": "_Account_",
+          "value": "INTERNAL"
+        }
+      ]
+    }
+  },
+  {
+    "self": "https://api.tempo.io/4/worklogs/23337",
+    "tempoWorklogId": 23337,
+    "issue": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/issue/18932",
+      "id": 18932
+    },
+    "timeSpentSeconds": 3600,
+    "billableSeconds": 0,
+    "startDate": "2023-10-27",
+    "startTime": "08:30:00",
+    "description": "CCTAE - video edits etc",
+    "createdAt": "2023-10-27T02:43:25Z",
+    "updatedAt": "2023-10-27T02:43:25Z",
+    "author": {
+      "self": "https://parklaneit.atlassian.net/rest/api/2/user?accountId=63d0a95dce7f4b4e14f9c0e7",
+      "accountId": "63d0a95dce7f4b4e14f9c0e7"
+    },
+    "attributes": {
+      "self": "https://api.tempo.io/4/worklogs/23337/work-attribute-values",
       "values": [
         {
           "key": "_Account_",

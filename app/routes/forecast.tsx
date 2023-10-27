@@ -126,7 +126,9 @@ function ForecastCell(props: ForecastCellProps) {
   const month1Date = new Date(props.forcast.month1.date);
   const month2Date = new Date(props.forcast.month2.date);
   const month3Date = new Date(props.forcast.month3.date);
-
+  if (props.forcast.month1.amount === 350) {
+    console.log(props.forcast);
+  }
   if (isSameMonth(props.calendarDate, month1Date)) {
     return (
       <TableCell className="text-right">
