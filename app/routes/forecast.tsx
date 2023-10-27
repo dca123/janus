@@ -10,7 +10,12 @@ import {
   TableRow,
 } from '~/components/ui/table';
 import { addMonths, format, isSameMonth } from 'date-fns';
-import { DEAL_STAGES, HubSpot, currentFiscalYear } from '~/lib/hubspot';
+import {
+  DEAL_STAGES,
+  DEAL_STAGE_PROBABILITY,
+  HubSpot,
+  currentFiscalYear,
+} from '~/lib/hubspot';
 
 export async function loader() {
   const hubspot = new HubSpot();
@@ -49,6 +54,7 @@ export default function Forecast() {
           <TableRow>
             <TableHead className="w-[100px]">Name</TableHead>
             <TableHead>Stage</TableHead>
+            <TableHead className="text-right">Likelihood</TableHead>
             <TableHead className="text-right">Amount</TableHead>
             <TableHead>Close Date</TableHead>
             {months.map((month) => (
@@ -72,7 +78,14 @@ export default function Forecast() {
                 }
               </TableCell>
               <TableCell className="text-right">
-                {AuDollar.format(parseInt(deal.properties.amount ?? '0'))}
+                {DEAL_STAGE_PROBABILITY[
+                  deal.properties
+                    .dealstage as keyof typeof DEAL_STAGE_PROBABILITY
+                ] * 100}
+                %
+              </TableCell>
+              <TableCell className="text-right">
+                {AuDollar.format(deal.properties.amount)}
               </TableCell>
               <TableCell>
                 {format(new Date(deal.properties.closedate), 'd MMM yyyy')}
@@ -81,7 +94,7 @@ export default function Forecast() {
                 <ForecastCell
                   key={`${month.getMonth()}-${deal.id}`}
                   forcast={deal.properties.forecast}
-                  calendarDate={month.toISOString()}
+                  calendarDate={month}
                 />
               ))}
             </TableRow>
@@ -107,22 +120,21 @@ type ForecastCellProps = {
       amount: number;
     };
   };
-  calendarDate: string;
+  calendarDate: Date;
 };
 function ForecastCell(props: ForecastCellProps) {
-  const calendarDate = new Date(props.calendarDate);
   const month1Date = new Date(props.forcast.month1.date);
   const month2Date = new Date(props.forcast.month2.date);
   const month3Date = new Date(props.forcast.month3.date);
 
-  if (isSameMonth(calendarDate, month1Date)) {
+  if (isSameMonth(props.calendarDate, month1Date)) {
     return (
       <TableCell className="text-right">
         {AuDollar.format(props.forcast.month1.amount)}
       </TableCell>
     );
   }
-  if (isSameMonth(calendarDate, month2Date)) {
+  if (isSameMonth(props.calendarDate, month2Date)) {
     return (
       <TableCell className="text-right">
         {AuDollar.format(props.forcast.month2.amount)}
@@ -130,7 +142,7 @@ function ForecastCell(props: ForecastCellProps) {
     );
   }
 
-  if (isSameMonth(calendarDate, month3Date)) {
+  if (isSameMonth(props.calendarDate, month3Date)) {
     return (
       <TableCell className="text-right">
         {AuDollar.format(props.forcast.month3.amount)}
