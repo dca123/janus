@@ -69,6 +69,7 @@ export class HubSpot {
             DEAL_STAGE_PROBABILITY[
               data.properties.dealstage as keyof typeof DEAL_STAGE_PROBABILITY
             ];
+          const amount = parseFloat(data.properties.amount ?? '0');
           const adjustedAmount = Number(data.properties.amount) * probability;
           const closeDate = new Date(data.properties.closedate);
           const forecast = {
@@ -89,6 +90,7 @@ export class HubSpot {
             ...data,
             properties: {
               ...data.properties,
+              amount,
               probability,
               forecast,
             },
