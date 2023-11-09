@@ -9,28 +9,20 @@ import {
   TableHeader,
   TableRow,
 } from '~/components/ui/table';
-import { addMonths, format, isSameMonth } from 'date-fns';
+import { addMonths, format } from 'date-fns';
 import {
   DEAL_STAGES,
   DEAL_STAGE_PROBABILITY,
   HubSpot,
   currentFiscalYear,
 } from '~/lib/hubspot';
+import { Button } from '~/components/ui/button';
+import type { SerializeFrom } from '@remix-run/node';
+import { mkConfig, generateCsv, download } from 'export-to-csv';
+import { zipObj } from 'remeda';
 
-export async function loader() {
-  const hubspot = new HubSpot();
-  const deals = await hubspot.deals();
-  return { deals };
-}
-
-const AuDollar = new Intl.NumberFormat('en-AU', {
-  style: 'currency',
-  currency: 'AUD',
-});
-
-function monthsInFiscalYear() {
+export function monthsInFiscalYear() {
   const { start } = currentFiscalYear();
-  console.log(start);
   const months = [];
   for (let index = 0; index < 12; index++) {
     const month = addMonths(start, index);
@@ -39,13 +31,106 @@ function monthsInFiscalYear() {
   return months;
 }
 
-export default function Forecast() {
-  const { deals } = useLoaderData<typeof loader>();
+export async function loader() {
   const months = monthsInFiscalYear();
+  const hubspot = new HubSpot();
+  const deals = await hubspot.deals.all();
+  const dealIds = deals.map((deal) => deal.id);
+
+  const associatedCompanies = await hubspot.deals.associatedCompanyIds(dealIds);
+  const companies = await hubspot.company.byIds(
+    associatedCompanies.map((id) => id.to),
+  );
+
+  const dealsWithCompanies = deals.map((deal) => {
+    let company = companies.find((company) =>
+      associatedCompanies.find(
+        (association) =>
+          association.to === company.id && association.from === deal.id,
+      ),
+    );
+    // if (company === undefined) {
+    //   throw new Error(`Could not find company for deal ${deal.id}`);
+    // }
+
+    return {
+      ...deal,
+      company,
+    };
+  });
+
+  return { dealsWithCompanies, months };
+}
+
+const AuDollar = new Intl.NumberFormat('en-AU', {
+  style: 'currency',
+  currency: 'AUD',
+});
+
+function generateExportData(
+  deals: SerializeFrom<typeof loader>['dealsWithCompanies'],
+  months: Array<Date>,
+) {
+  const data = deals.map((deal) => {
+    const forecast = zipObj(
+      months.map((m) => format(m, 'MMM / yy')),
+      deal.properties.forecast.map((amount) => AuDollar.format(amount)),
+    );
+    return {
+      dealName: deal.properties.dealname,
+      company: deal.company ? deal.company.properties.name : '-',
+      stage: DEAL_STAGES[deal.properties.dealstage as keyof typeof DEAL_STAGES],
+      likelihood:
+        DEAL_STAGE_PROBABILITY[
+          deal.properties.dealstage as keyof typeof DEAL_STAGE_PROBABILITY
+        ] * 100,
+      amount: AuDollar.format(deal.properties.amount),
+      closeDate: format(new Date(deal.properties.closedate), 'd MMM yyyy'),
+      ...forecast,
+    };
+  });
+  return data;
+}
+
+const csvConfig = mkConfig({
+  title: 'Forecast',
+  columnHeaders: [
+    { key: 'dealName', displayLabel: 'Deal Name' },
+    {
+      key: 'company',
+      displayLabel: 'Company',
+    },
+    { key: 'stage', displayLabel: 'Stage' },
+    {
+      key: 'likelihood',
+      displayLabel: 'Likelihood',
+    },
+    { key: 'amount', displayLabel: 'Amount' },
+    {
+      key: 'closeDate',
+      displayLabel: 'Close Date',
+    },
+    ...monthsInFiscalYear().map((month) => format(month, 'MMM / yy')),
+  ],
+});
+export default function Forecast() {
+  const { dealsWithCompanies: deals, months: unserializedMonths } =
+    useLoaderData<typeof loader>();
+  const months = unserializedMonths.map((month) => new Date(month));
+  const exportData = generateExportData(deals, months);
+  console.log(exportData);
+  const csv = generateCsv(csvConfig)(exportData);
+  const handleClick = () => {
+    download(csvConfig)(csv);
+  };
+
   return (
     <div className="flex flex-col space-y-2">
       <div className="flex flex-row space-x-2 items-center p-6 justify-center mx-auto">
         <h1 className="text-lg">Forecast</h1>
+      </div>
+      <div className="self-end">
+        <Button onClick={handleClick}>Export</Button>
       </div>
       <Separator />
       <Table>
@@ -53,6 +138,7 @@ export default function Forecast() {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Name</TableHead>
+            <TableHead>Company</TableHead>
             <TableHead>Stage</TableHead>
             <TableHead className="text-right">Likelihood</TableHead>
             <TableHead className="text-right">Amount</TableHead>
@@ -69,6 +155,9 @@ export default function Forecast() {
             <TableRow key={deal.id}>
               <TableCell className="font-medium">
                 {deal.properties.dealname}
+              </TableCell>
+              <TableCell>
+                {deal.company ? deal.company.properties.name : '-'}
               </TableCell>
               <TableCell>
                 {
@@ -90,12 +179,10 @@ export default function Forecast() {
               <TableCell>
                 {format(new Date(deal.properties.closedate), 'd MMM yyyy')}
               </TableCell>
-              {months.map((month) => (
-                <ForecastCell
-                  key={`${month.getMonth()}-${deal.id}`}
-                  forcast={deal.properties.forecast}
-                  calendarDate={month}
-                />
+              {deal.properties.forecast.map((amount) => (
+                <TableCell className="text-right" key={amount}>
+                  {AuDollar.format(amount)}
+                </TableCell>
               ))}
             </TableRow>
           ))}
@@ -103,54 +190,4 @@ export default function Forecast() {
       </Table>
     </div>
   );
-}
-
-type ForecastCellProps = {
-  forcast: {
-    month1: {
-      date: string;
-      amount: number;
-    };
-    month2: {
-      date: string;
-      amount: number;
-    };
-    month3: {
-      date: string;
-      amount: number;
-    };
-  };
-  calendarDate: Date;
-};
-function ForecastCell(props: ForecastCellProps) {
-  const month1Date = new Date(props.forcast.month1.date);
-  const month2Date = new Date(props.forcast.month2.date);
-  const month3Date = new Date(props.forcast.month3.date);
-  if (props.forcast.month1.amount === 350) {
-    console.log(props.forcast);
-  }
-  if (isSameMonth(props.calendarDate, month1Date)) {
-    return (
-      <TableCell className="text-right">
-        {AuDollar.format(props.forcast.month1.amount)}
-      </TableCell>
-    );
-  }
-  if (isSameMonth(props.calendarDate, month2Date)) {
-    return (
-      <TableCell className="text-right">
-        {AuDollar.format(props.forcast.month2.amount)}
-      </TableCell>
-    );
-  }
-
-  if (isSameMonth(props.calendarDate, month3Date)) {
-    return (
-      <TableCell className="text-right">
-        {AuDollar.format(props.forcast.month3.amount)}
-      </TableCell>
-    );
-  }
-
-  return <TableCell className="text-right">-</TableCell>;
 }

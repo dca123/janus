@@ -12,6 +12,7 @@ module.exports = {
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
   serverModuleFormat: 'cjs',
+  serverDependenciesToBundle: ['export-to-csv'],
   future: {
     v2_dev: true,
     v2_errorBoundary: true,

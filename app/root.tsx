@@ -7,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteError,
 } from '@remix-run/react';
 import styles from './tailwind.css';
 
@@ -19,7 +20,25 @@ export const links: LinksFunction = () => [
     type: 'image/svg',
   },
 ];
-
+export function ErrorBoundary() {
+  const error = useRouteError() as Error;
+  console.error(error);
+  return (
+    <html>
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body className="container mx-auto dark py-8 px-4">
+        <h1 className="text-3xl">Error !</h1>
+        <p>{error.message}</p>
+        {/* add the UI you want your users to see */}
+        <Scripts />
+      </body>
+    </html>
+  );
+}
 export default function App() {
   return (
     <html lang="en">
