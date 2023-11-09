@@ -1,14 +1,7 @@
 import { Client } from '@hubspot/api-client';
-import {
-  addMonths,
-  format,
-  getTime,
-  isSameMonth,
-  startOfMonth,
-} from 'date-fns';
+import { addMonths, getTime, isSameMonth, startOfMonth } from 'date-fns';
 import { z } from 'zod';
 import { monthsInFiscalYear } from '~/routes/forecast';
-import * as R from 'remeda';
 
 export const DEAL_STAGES = {
   '26411178': 'Lead Opportunity',
@@ -92,7 +85,7 @@ export class HubSpot {
               if (isSameMonth(month, addMonths(closeDate, 3))) {
                 return adjustedAmount * 0.3;
               }
-              return 0;
+              return '-';
             });
 
             return {

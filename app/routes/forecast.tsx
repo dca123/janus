@@ -74,7 +74,9 @@ function generateExportData(
   const data = deals.map((deal) => {
     const forecast = zipObj(
       months.map((m) => format(m, 'MMM / yy')),
-      deal.properties.forecast.map((amount) => AuDollar.format(amount)),
+      deal.properties.forecast.map((amount) =>
+        amount === '-' ? '-' : AuDollar.format(amount),
+      ),
     );
     return {
       dealName: deal.properties.dealname,
@@ -181,7 +183,7 @@ export default function Forecast() {
               </TableCell>
               {deal.properties.forecast.map((amount) => (
                 <TableCell className="text-right" key={amount}>
-                  {AuDollar.format(amount)}
+                  {amount === '-' ? '-' : AuDollar.format(amount)}
                 </TableCell>
               ))}
             </TableRow>
