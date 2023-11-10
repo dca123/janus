@@ -20,6 +20,7 @@ import { Button } from '~/components/ui/button';
 import type { SerializeFrom } from '@remix-run/node';
 import { mkConfig, generateCsv, download } from 'export-to-csv';
 import { zipObj } from 'remeda';
+import { Download } from 'lucide-react';
 
 export function monthsInFiscalYear() {
   const { start } = currentFiscalYear();
@@ -120,7 +121,6 @@ export default function Forecast() {
     useLoaderData<typeof loader>();
   const months = unserializedMonths.map((month) => new Date(month));
   const exportData = generateExportData(deals, months);
-  console.log(exportData);
   const csv = generateCsv(csvConfig)(exportData);
   const handleClick = () => {
     download(csvConfig)(csv);
@@ -132,7 +132,10 @@ export default function Forecast() {
         <h1 className="text-lg">Forecast</h1>
       </div>
       <div className="self-end">
-        <Button onClick={handleClick}>Export</Button>
+        <Button onClick={handleClick}>
+          <Download className="mr-2 h-4 w-4" />
+          Export
+        </Button>
       </div>
       <Separator />
       <Table>
