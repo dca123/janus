@@ -61,12 +61,17 @@ export class HubSpot {
               dealstage: z.string(),
               hs_lastmodifieddate: z.string(),
               hs_object_id: z.string(),
+              project_type: z
+                .literal('managed-services')
+                .or(z.literal('project'))
+                .nullable(),
             }),
             createdAt: z.date(),
             updatedAt: z.date(),
             archived: z.boolean(),
           })
           .transform((data) => {
+            const project_type = data.properties.project_type ?? 'project';
             const probability =
               DEAL_STAGE_PROBABILITY[
                 data.properties.dealstage as keyof typeof DEAL_STAGE_PROBABILITY
@@ -95,6 +100,7 @@ export class HubSpot {
                 amount,
                 probability,
                 forecast,
+                project_type,
               },
             };
           }),
@@ -119,7 +125,13 @@ export class HubSpot {
         ],
         after: 0,
         limit: 100,
-        properties: ['dealname', 'dealstage', 'amount', 'closedate'],
+        properties: [
+          'dealname',
+          'dealstage',
+          'amount',
+          'closedate',
+          'project_type',
+        ],
         sorts: ['dealname'],
       });
       const deals = Schema.parse(response.results);

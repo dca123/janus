@@ -35,15 +35,18 @@ export function monthsInFiscalYear() {
 export async function loader() {
   const months = monthsInFiscalYear();
   const hubspot = new HubSpot();
-  const deals = await hubspot.deals.all();
-  const dealIds = deals.map((deal) => deal.id);
+  const allDeals = await hubspot.deals.all();
+  const projectDeals = allDeals.filter(
+    (d) => d.properties.project_type === 'project',
+  );
+  const dealIds = projectDeals.map((deal) => deal.id);
 
   const associatedCompanies = await hubspot.deals.associatedCompanyIds(dealIds);
   const companies = await hubspot.company.byIds(
     associatedCompanies.map((id) => id.to),
   );
 
-  const dealsWithCompanies = deals.map((deal) => {
+  const dealsWithCompanies = projectDeals.map((deal) => {
     let company = companies.find((company) =>
       associatedCompanies.find(
         (association) =>
