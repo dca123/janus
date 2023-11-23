@@ -36,17 +36,14 @@ export async function loader() {
   const months = monthsInFiscalYear();
   const hubspot = new HubSpot();
   const allDeals = await hubspot.deals.all();
-  const projectDeals = allDeals.filter(
-    (d) => d.properties.project_type === 'project',
-  );
-  const dealIds = projectDeals.map((deal) => deal.id);
+  const dealIds = allDeals.map((deal) => deal.id);
 
   const associatedCompanies = await hubspot.deals.associatedCompanyIds(dealIds);
   const companies = await hubspot.company.byIds(
     associatedCompanies.map((id) => id.to),
   );
 
-  const dealsWithCompanies = projectDeals.map((deal) => {
+  const dealsWithCompanies = allDeals.map((deal) => {
     let company = companies.find((company) =>
       associatedCompanies.find(
         (association) =>
@@ -86,6 +83,7 @@ function generateExportData(
       dealName: deal.properties.dealname,
       company: deal.company ? deal.company.properties.name : '-',
       stage: DEAL_STAGES[deal.properties.dealstage as keyof typeof DEAL_STAGES],
+      projectType: titleCase(deal.properties.project_type),
       likelihood:
         DEAL_STAGE_PROBABILITY[
           deal.properties.dealstage as keyof typeof DEAL_STAGE_PROBABILITY
@@ -107,6 +105,10 @@ const csvConfig = mkConfig({
       displayLabel: 'Company',
     },
     { key: 'stage', displayLabel: 'Stage' },
+    {
+      key: 'projectType',
+      displayLabel: 'Project Type',
+    },
     {
       key: 'likelihood',
       displayLabel: 'Likelihood',
@@ -148,6 +150,7 @@ export default function Forecast() {
             <TableHead className="w-[100px]">Name</TableHead>
             <TableHead>Company</TableHead>
             <TableHead>Stage</TableHead>
+            <TableHead>Project Type</TableHead>
             <TableHead className="text-right">Likelihood</TableHead>
             <TableHead className="text-right">Amount</TableHead>
             <TableHead>Close Date</TableHead>
@@ -174,6 +177,7 @@ export default function Forecast() {
                   ]
                 }
               </TableCell>
+              <TableCell>{titleCase(deal.properties.project_type)}</TableCell>
               <TableCell className="text-right">
                 {DEAL_STAGE_PROBABILITY[
                   deal.properties
@@ -199,3 +203,7 @@ export default function Forecast() {
     </div>
   );
 }
+
+const titleCase = (str: string) => {
+  return str[0].toUpperCase() + str.slice(1);
+};
